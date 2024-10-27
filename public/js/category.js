@@ -31,8 +31,12 @@ async function addCategory() {
       loadCategories();
       alert('Category added successfully.');
     } catch (error) {
-      console.error('Error adding category:', error);
-      alert('Failed to add category.');
+      if (error.response && error.response.status === 400) {
+        alert(error.response.data.error); // Shows 'Category already exists'
+      } else {
+        console.error('Error adding category:', error);
+        alert('Failed to add category.');
+      }
     }
   } else {
     alert("Please enter a category name.");
