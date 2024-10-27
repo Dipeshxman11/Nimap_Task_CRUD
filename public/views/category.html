@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category Management</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./js/category.js" defer></script>
+</head>
+<body>
+  <h1>Category Management</h1>
+  <nav>
+    <a href="/products">Go to Product Management</a>
+  </nav>
+  <div>
+    <input type="text" id="categoryName" placeholder="Enter Category Name">
+    <button onclick="addCategory()">Add Category</button>
+    <button onclick="updateCategory()">Update Category</button>
+    <input type="hidden" id="categoryId">
+  </div>
+  <h2>Category List</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="category-list"></tbody>
+  </table>
+</body>
+</html>
